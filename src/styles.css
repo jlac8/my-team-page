@@ -1,8 +1,125 @@
-body {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+body {
+  font-family:'Poppins', sans-serif;
+  font-weight: 500;
+  color:  #000000;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 5vh;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+h1 {
+  font-family: serif;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+.text-content {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 14px;
+  max-width: 350px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.images > :nth-child(2n) {
+  transform: translateY(2rem); /* Baja toda la columna derecha */
+}
+
+.team-member {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+}
+
+.team-member-role {
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  color: #797979;
+}
+
+.team-member-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.attribution {
+  font-size: 11px;
+  color: #cacbca;
+}
+
+.attribution a {
+  color: #cacbca;
+}
+
+@media (min-width: 525px) {
+  .images {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para los miembros del equipo */
+    gap: 2rem; /* Espacio mayor entre columnas */
+    max-width: 1200px;
+    justify-items: space-between;
+  }
+
+  .images > :nth-child(2n) {
+    transform: translateY(0rem); /* Baja toda la columna derecha */
+  }
+
+  .images > :nth-child(3n+2) {
+    transform: translateY(2rem); /* Baja solo los elementos de la columna del medio */
+  }
+
+  .text-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+}
